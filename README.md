@@ -1,6 +1,6 @@
 # `File-Splitter`
 
-A simple tool for split, zip, and encrypt a file
+A simple tool for split, zip, and encrypt files
 
 [![Download File Splitter](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
 

@@ -12,4 +12,4 @@ A simple tool for split, zip, and encrypt a file
 The documentation for this project is available in **doc** folder
 
 ## Screenshot
-![](doc/Screenshot.jpg)
+![](doc/Screenshot.png)

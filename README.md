@@ -2,6 +2,10 @@
 
 A simple tool for split, zip, and encrypt a file
 
+## Download
+Download the executable file here:
+[![Download File Splitter](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
+
 ## Specification
 
 #### Written in Java 8, can be run on all the operating systems

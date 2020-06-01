@@ -1,4 +1,5 @@
-# `File-Splitter` ![](doc/index.png)
+# `File-Splitter`
+![](doc/index.png)
 
 A simple tool for split, zip, and encrypt a file
 

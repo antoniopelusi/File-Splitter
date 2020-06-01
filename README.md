@@ -12,6 +12,7 @@ Need Java virtual machine to start, avaiable [there](https://www.java.com/en/dow
 - Split by size
 - Compress files using .zip format
 - Encrypt files using Advanced Encryption Standard (AES) 128 bit (***16-digit password to encrypt***)
+- Place multiple files in a queue before processing them
 
 **temporary files are automatically deleted**
 

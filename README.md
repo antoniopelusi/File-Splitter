@@ -9,4 +9,4 @@ A simple tool for split, zip, and encrypt a file
 - Encrypt files using Advanced Encryption Standard (AES) 128 bit (16-digit password to encrypt)
 
 ## Documentation
-Documentation
+Documentation aviable [here](doc/Screenshot.jpg)

@@ -18,7 +18,7 @@ Need Java virtual machine to start, avaiable [there](https://www.java.com/en/dow
 **the output files will be stored in the folder of the file splitter**
 
 ## Documentation
-The documentation for this project is available in the **doc** folder
+The documentation for this project is available in the **/doc** folder
 
 ## Screenshot
 ![](doc/Screenshot.png)

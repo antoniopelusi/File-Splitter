@@ -1,13 +1,13 @@
 # `File-Splitter`
 
-A simple tool for split, zip, and encrypt files
+A simple tool to split, zip, and encrypt files
 
 [![Download File Splitter](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
 
 ## Specification
 
 #### Written in Java 8, can be run on all the operating systems
-Need Java virtual machine to start, avaiable [there](https://www.java.com/en/download/)
+Need Java virtual machine to start, available [**here**](https://www.java.com/en/download/)
 
 - Split by size
 - Compress files using .zip format

@@ -26,4 +26,4 @@ The documentation for this project is available in the **/doc** folder
 ## `Screenshot`
 Swing GUI, *the graphic could change between operating systems*
 
-![](doc/Screenshot2.png)
+![](doc/Screenshot.png)

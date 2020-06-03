@@ -1,10 +1,12 @@
-# `File-Splitter`     #####v 1.2
+# `File-Splitter` [![Download File Splitter](https://img.shields.io/sourceforge/dt/tool-file-splitter.svg)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
 
 A simple tool to split, zip, and encrypt files
 
 [![Download File Splitter](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
 
 ## `Specification`
+
+Version: **1.2**
 
 #### Written in Java 8, can be run on all the operating systems
 Need Java virtual machine to start, available [**here**](https://www.java.com/en/download/)

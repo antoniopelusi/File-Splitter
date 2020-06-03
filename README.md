@@ -14,9 +14,9 @@ Need Java virtual machine to start, available [**here**](https://www.java.com/en
 - Encrypt files using Advanced Encryption Standard (AES) 128 bit (***16-digit password to encrypt***)
 - Place multiple files in a queue before processing them
 
-**temporary files are automatically deleted**
+**Temporary files are automatically deleted**
 
-**the output files will be stored:**
+**The output files will be stored:**
 - in the File Splitter current folder for Windows OS
 - in the home folder for Linux OS
 

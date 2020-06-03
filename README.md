@@ -27,6 +27,6 @@ Need Java virtual machine to start, available [**here**](https://www.java.com/en
 The documentation for this project is available in the **/doc** folder
 
 ## `Screenshot`
-Swing GUI, light and fast
+Swing GUI, *light and fast*
 
 ![](doc/Screenshot.png)

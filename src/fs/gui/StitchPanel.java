@@ -17,6 +17,7 @@ public class StitchPanel extends JPanel implements ActionListener, ItemListener
 	private JTextField t1, t2;
 	private JCheckBox c1;
 	private JFileChooser fc;
+	private JScrollPane s1;
 	
 	private int returnVal;
 	static String output, getDecryptVal;
@@ -45,19 +46,22 @@ public class StitchPanel extends JPanel implements ActionListener, ItemListener
 		
 	    //componenti
 		b1 = new JButton("Select file");	
-		b1.setBounds(15, 20, 110, 25);
+		b1.setBounds(15, 20, 110, 40);
 		b1.addActionListener(this);
 		
 		t1 = new JTextField();
-		t1.setBounds(140, 20, 190, 25);
 		t1.setEditable(false);
 		
+		s1 = new JScrollPane(t1);
+		s1.setBounds(140, 20, 190, 40);
+		s1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
 		c1 = new JCheckBox("Decrypt");
 		c1.setBounds(13, 80, 90, 25);
 		c1.addItemListener(this);
 		
 		t2 = new JTextField();
-		t2.setBounds(145, 80, 125, 25);
+		t2.setBounds(140, 80, 125, 25);
 		t2.setHorizontalAlignment(JTextField.CENTER);
 		t2.setEditable(false);
 		
@@ -66,7 +70,7 @@ public class StitchPanel extends JPanel implements ActionListener, ItemListener
 		b2.addActionListener(this);
 		
 		add(b1);
-		add(t1);
+		add(s1);
 		add(c1);
 		add(t2);
 		add(b2);

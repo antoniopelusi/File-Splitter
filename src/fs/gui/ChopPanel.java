@@ -21,6 +21,7 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 	private JLabel l1;
 	static JComboBox<String> C1;
 	private JFileChooser fc;
+	private JScrollPane s1;
 	
 	String[] combobox = {"B", "KB", "MB", "GB"};
 	
@@ -57,13 +58,16 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		
 	    //componenti
 		b1 = new JButton("Select file");	
-		b1.setBounds(15, 20, 110, 25);
+		b1.setBounds(15, 20, 110, 40);
 		b1.addActionListener(this);
 		
 		t1 = new JTextField();
-		t1.setBounds(140, 20, 190, 25);
 		t1.setEditable(false);
 		
+		s1 = new JScrollPane(t1);
+		s1.setBounds(140, 20, 190, 40);
+		s1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
 		c1 = new JCheckBox("Split");
 		c1.setBounds(13, 80, 60, 25);
 		c1.addItemListener(this);
@@ -96,7 +100,7 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		grp2.add(R3);
 		
 		t4 = new JTextField();
-		t4.setBounds(145, 180, 125, 25);
+		t4.setBounds(140, 180, 125, 25);
 		t4.setHorizontalAlignment(JTextField.CENTER);
 		t4.setEditable(false);
 		
@@ -105,7 +109,7 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		b2.addActionListener(this);
 		
 		add(b1);
-		add(t1);
+		add(s1);
 		add(c1);
 		add(l1);
 		add(t2);

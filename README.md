@@ -5,7 +5,6 @@ A simple tool to split, zip, and encrypt files
 [![Download File Splitter](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
 
 ## `Specification`
-
 Version: **1.2**
 
 [![Download File Splitter](https://img.shields.io/sourceforge/dt/tool-file-splitter.svg)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)

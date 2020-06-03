@@ -4,7 +4,7 @@ A simple tool to split, zip, and encrypt files
 
 [![Download File Splitter](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
 
-## Specification
+## `Specification`
 
 #### Written in Java 8, can be run on all the operating systems
 Need Java virtual machine to start, available [**here**](https://www.java.com/en/download/)
@@ -20,10 +20,10 @@ Need Java virtual machine to start, available [**here**](https://www.java.com/en
 - in the File Splitter current folder for Windows OS
 - in the home folder for Linux OS
 
-## Documentation
+## `Documentation`
 The documentation for this project is available in the **/doc** folder
 
-## Screenshot
+## `Screenshot`
 Swing GUI, *the graphic could change between operating systems*
 
 ![](doc/Screenshot2.png)

@@ -1,4 +1,4 @@
-# `File-Splitter`
+# `File-Splitter`     #####v 1.2
 
 A simple tool to split, zip, and encrypt files
 

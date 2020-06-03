@@ -14,7 +14,6 @@ import java.util.*;
  */
 public class JobPanel extends JPanel //implements ActionListener
 {
-	private final static int maxRows = 15;
 	private Object header[] = {"Type", "File", "Split type", "Split val", "Compress", "Crypt"};
 	static DefaultTableModel tModel;
 	static JTable t;
@@ -69,19 +68,15 @@ public class JobPanel extends JPanel //implements ActionListener
 	 */
 	public static void AddRow(Object row[], File file[])
 	{
-		int count = tModel.getRowCount()+1;
-		if(count < maxRows)
+		for(int i=0; i<file.length; i++)
 		{
-			for(int i=0; i<file.length; i++)
-			{
-				row[1] = ChopPanel.file[i].getName();
-				
-				tModel.addRow(row);
-				
-				files.add(file[i]);
-				
-				Frame.printTest();
-			}
+			row[1] = ChopPanel.file[i].getName();
+			
+			tModel.addRow(row);
+			
+			files.add(file[i]);
+			
+			Frame.printTest();
 		}
 	}
 	/**
@@ -91,16 +86,12 @@ public class JobPanel extends JPanel //implements ActionListener
 	 */
 	public static void AddRow2(Object row[], File file2[])
 	{
-		int count = tModel.getRowCount()+1;
-		if(count < maxRows)
-		{
-			row[1] = StitchPanel.output;
-			
-			tModel.addRow(row);
-						
-			files2.add(files2.size(), file2);
+		row[1] = StitchPanel.output;
+		
+		tModel.addRow(row);
+					
+		files2.add(files2.size(), file2);
 
-			Frame.printTest();
-		}
+		Frame.printTest();
 	}
 }

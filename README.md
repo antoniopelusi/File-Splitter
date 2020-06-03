@@ -16,7 +16,9 @@ Need Java virtual machine to start, available [**here**](https://www.java.com/en
 
 **temporary files are automatically deleted**
 
-**the output files will be stored in the File Splitter current folder**
+**the output files will be stored:++
+- in the File Splitter current folder for Windows OS
+- in the home folder for Linux OS
 
 ## Documentation
 The documentation for this project is available in the **/doc** folder

@@ -7,6 +7,7 @@ A simple tool to split, zip, and encrypt files
 ## `Specification`
 
 Version: **1.2**
+
 [![Download File Splitter](https://img.shields.io/sourceforge/dt/tool-file-splitter.svg)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
 
 #### Written in Java 8, can be run on all the operating systems

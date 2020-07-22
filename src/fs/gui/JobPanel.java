@@ -57,7 +57,6 @@ public class JobPanel extends JPanel //implements ActionListener
         
         t.getTableHeader().setReorderingAllowed(false);
         t.setRowSelectionAllowed(false);
-        						
 		add(new JScrollPane(t));
 	}
 	/**

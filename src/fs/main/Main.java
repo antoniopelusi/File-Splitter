@@ -6,6 +6,7 @@ import fs.gui.Frame;
 /**
  * Main function
  * @author antoniopelusi
+ * @version 1.3
  *
  */
 public class Main
@@ -19,5 +20,6 @@ public class Main
 
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
+        f.requestFocus();
 	}
 }

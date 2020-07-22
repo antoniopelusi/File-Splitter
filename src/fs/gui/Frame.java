@@ -135,7 +135,35 @@ public class Frame extends JFrame implements ActionListener
 	 *	   Stitch --> unzip
 	 *	----------------------
 	 */
-
+	
+	
+	
+	/**
+	 * function that convert byte to selected unit of measure
+	 */
+	public void checkSize(int i)
+	{
+		if(ChopPanel.C1.getSelectedIndex() == 0) //B
+		{
+			sizeCalculated = (int)JobPanel.t.getValueAt(i, 3);
+		}
+		
+		else if(ChopPanel.C1.getSelectedIndex() == 1) //KB
+		{
+			sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1024;
+		}
+		
+		else if(ChopPanel.C1.getSelectedIndex() == 2) //MB
+		{
+			sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1024*1024;
+		}
+		
+		else if(ChopPanel.C1.getSelectedIndex() == 3) //GB
+		{
+			sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1024*1024*1024;
+		}
+	}
+	
 	/**
 	 * One listener for all the object int the Frame,
 	 * contain the Chop logic and the Stitch logic.
@@ -181,27 +209,9 @@ public class Frame extends JFrame implements ActionListener
 							
 							System.out.println("---chop started---");
 							
-							if(ChopPanel.C1.getSelectedIndex() == 0) //B
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3);
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 1) //KB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000;
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 2) //MB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000000;
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 3) //GB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000000000;
-							}
-							
+							checkSize(i);
 							Chop.ChopFun(encryptedFile, sizeCalculated);
+							
 							System.out.println("---chop ended---");
 							
 							encryptedFile.delete();
@@ -221,27 +231,9 @@ public class Frame extends JFrame implements ActionListener
 							
 							System.out.println("---Chop started---");
 							
-							if(ChopPanel.C1.getSelectedIndex() == 0) //B
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3);
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 1) //KB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000;
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 2) //MB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000000;
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 3) //GB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000000000;
-							}
-							
+							checkSize(i);
 							Chop.ChopFun(zippedFile, sizeCalculated);
+							
 							System.out.println("---Chop ended---");
 							
 							zippedFile.delete();
@@ -250,28 +242,9 @@ public class Frame extends JFrame implements ActionListener
 						{
 							System.out.println("---Chop started---");
 
-							if(ChopPanel.C1.getSelectedIndex() == 0) //B
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3);
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 1) //KB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000;
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 2) //MB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000000;
-							}
-							
-							else if(ChopPanel.C1.getSelectedIndex() == 3) //GB
-							{
-								sizeCalculated = (int)JobPanel.t.getValueAt(i, 3)*1000000000;
-							}
-							
-
+							checkSize(i);
 							Chop.ChopFun(JobPanel.files.get(nChop), sizeCalculated);
+							
 							System.out.println("---Chop ended---");
 						}
 						

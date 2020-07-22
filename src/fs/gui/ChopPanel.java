@@ -1,8 +1,14 @@
 package fs.gui;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.datatransfer.*;
 import java.awt.event.*;
 import java.io.File;
+import java.security.SecureRandom;
+import java.text.DecimalFormat;
+
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -13,12 +19,11 @@ import javax.swing.border.*;
  */
 public class ChopPanel extends JPanel implements ItemListener, ActionListener
 {
-	private JButton b1, b2;
-	private static JTextField t1, t2, t4;
-	private static JCheckBox c1;
+	private JButton b1, b2, b3;
+	private static JTextField t1, t2, t3;
 	private static JRadioButton R1, R2, R3;
 	private ButtonGroup grp2;
-	private JLabel l1;
+	private JLabel l1, l2;
 	static JComboBox<String> C1;
 	private JFileChooser fc;
 	private JScrollPane s1;
@@ -27,8 +32,6 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 	
 	private int returnVal;
 	
-	private String output;
-	private static boolean getSplitTypeVal;
 	private static String getCryptVal;
 	private static boolean getCompressVal;
 	private static int getSplitValVal;
@@ -36,6 +39,9 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 	private static Object row[];
 	
 	static File file[];
+	
+	static final String alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	static SecureRandom rnd = new SecureRandom();
 	
 	/**
 	 * the ChopPanel constructor 
@@ -67,31 +73,28 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		s1 = new JScrollPane(t1);
 		s1.setBounds(140, 20, 190, 40);
 		s1.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-
-		c1 = new JCheckBox("Split");
-		c1.setBounds(13, 80, 60, 25);
-		c1.addItemListener(this);
 		
 		l1 = new JLabel("Part size");
-		l1.setBounds(140, 80, 65, 25);
-		
+		l1.setBounds(15, 80, 65, 25);
+
 		t2 = new JTextField();
-		t2.setBounds(210, 80, 60, 25);
+		t2.setBounds(95, 80, 60, 25);
+		t2.setHorizontalAlignment(JTextField.CENTER);
 		t2.setEditable(false);
 		
 		C1 = new JComboBox<String>(combobox);
-		C1.setBounds(275, 80, 50, 25);
+		C1.setBounds(160, 80, 50, 25);
 		C1.setSelectedIndex(2);
 		
 		R3 = new JRadioButton("Nothing");
-		R3.setBounds(13, 120, 100, 25);
+		R3.setBounds(13, 115, 100, 25);
 		R3.setSelected(true);
 		
 		R1 = new JRadioButton("Compress");
-		R1.setBounds(13, 150, 100, 25);
+		R1.setBounds(13, 145, 100, 25);
 		
 		R2 = new JRadioButton("Encrypt");
-		R2.setBounds(13, 180, 80, 25);
+		R2.setBounds(13, 175, 80, 25);
 		R2.addItemListener(this);
 		
 		grp2 = new ButtonGroup();
@@ -99,39 +102,36 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		grp2.add(R2);
 		grp2.add(R3);
 		
-		t4 = new JTextField();
-		t4.setBounds(140, 180, 125, 25);
-		t4.setHorizontalAlignment(JTextField.CENTER);
-		t4.setEditable(false);
+		t3 = new JTextField();
+		t3.setBounds(95, 175, 135, 25);
+		t3.setHorizontalAlignment(JTextField.CENTER);
+		t3.setEditable(false);
+		
+		b3 = new JButton("Random");
+		b3.setBounds(235, 175, 95, 25);
+		b3.addActionListener(this);
+        b3.setEnabled(false);
 		
 		b2 = new JButton("Create job");
 		b2.setBounds(220, 220, 110, 25);
 		b2.addActionListener(this);
 		
+		l2 = new JLabel();
+		l2.setBounds(105, 195, 120, 25);
+		l2.setFont(new Font(null, Font.ITALIC, 11));
+		
 		add(b1);
 		add(s1);
-		add(c1);
 		add(l1);
 		add(t2);
 		add(C1);
 		add(R1);
 		add(R2);
 		add(R3);
-		add(t4);
-		add(b2);		
-	}
-	
-	/**
-	 * @return the boolean value referred to the split type
-	 */
-	public static boolean getSplitType() //3
-	{
-		if(c1.isSelected())
-			getSplitTypeVal = true;
-		else
-			getSplitTypeVal = false;
-		
-		return getSplitTypeVal;
+		add(t3);
+		add(b2);
+		add(b3);
+		add(l2);
 	}
 	
 	/**
@@ -139,12 +139,9 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 	 */
 	public static int getSplitVal() //4
 	{
-		if(c1.isSelected())
+		if(!t2.getText().equals(""))
 		{
-			if(!t2.getText().equals(""))
-			{
-				getSplitValVal = Integer.parseInt(t2.getText());
-			}
+			getSplitValVal = Integer.parseInt(t2.getText());
 		}
 		return getSplitValVal;
 	}
@@ -165,14 +162,15 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		
 		return getCompressVal;
 	}
+	
 	/**
 	 * @return the key used to the Crypt algorithm for the file encryption
 	 */
 	public static String getCrypt() //6
 	{
-		if(R2.isSelected() == true && !t4.getText().equals(""))
+		if(R2.isSelected() == true && !t3.getText().equals(""))
 		{
-			getCryptVal = t4.getText();
+			getCryptVal = t3.getText();
 		}
 		else
 		{
@@ -181,38 +179,73 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		
 		return getCryptVal;
 	}
+	
+	/**
+	 * 
+	 * @param size
+	 * @return the size in the right unit of measurement
+	 */
+	public static String formatFileSize(long size) {
+	    String hrSize = null;
+
+	    double b = size;
+	    double k = size/1024.0;
+	    double m = ((size/1024.0)/1024.0);
+	    double g = (((size/1024.0)/1024.0)/1024.0);
+	    double t = ((((size/1024.0)/1024.0)/1024.0)/1024.0);
+
+	    DecimalFormat dec = new DecimalFormat("0.00");
+
+	    if ( t>1 ) {
+	        hrSize = dec.format(t).concat(" TB");
+	    } else if ( g>1 ) {
+	        hrSize = dec.format(g).concat(" GB");
+	    } else if ( m>1 ) {
+	        hrSize = dec.format(m).concat(" MB");
+	    } else if ( k>1 ) {
+	        hrSize = dec.format(k).concat(" KB");
+	    } else {
+	        hrSize = dec.format(b).concat(" Bytes");
+	    }
+
+	    return hrSize;
+	}
+
+	/**
+	 * 
+	 * @param len
+	 * @return the 128bit random-generated password for AES
+	 */
+	String randomString(int len)
+	{
+		StringBuilder sb = new StringBuilder(len);
+		
+		for(int i=0; i<len; i++) 
+			sb.append(alphabet.charAt(rnd.nextInt(alphabet.length())));
+		
+		return sb.toString();
+}
+
 	/**
 	 * listener containing the ChopPanel GUI logic
 	 */
 	public void itemStateChanged(ItemEvent e)
-	{
-		if(e.getItemSelectable() == c1) //split graphic logic
-		{
-			if(c1.isSelected() == true)
-			{
-				t2.setEditable(true);
-			}
-			
-			else
-			{
-				t2.setEditable(false);
-				
-				t2.setText(null);
-			}
-		}
-		
+	{	
 		if(e.getItemSelectable() == R2) //encrypt graphic logic
 		{
 			if(R2.isSelected())
 			{
-				t4.setEditable(true);
-				t4.setText(null);
+				t3.setEditable(true);
+				t3.setText(null);
+				b3.setEnabled(true);
 			}
 			
 			else
 			{
-				t4.setEditable(false);
-				t4.setText(null);
+				t3.setEditable(false);
+				t3.setText(null);
+				b3.setEnabled(false);
+				l2.setText(null);
 			}
 		}
 	}
@@ -230,6 +263,8 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 		{
 			fc = new JFileChooser();
 			fc.setMultiSelectionEnabled(true);
+			Action details = fc.getActionMap().get("viewTypeDetails");
+			details.actionPerformed(null);
 			
 			returnVal = fc.showOpenDialog(null);
 			
@@ -243,18 +278,33 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 				
 				for(int i=0; i<n; i++)
 				{
-					sb.append(file[i].getName() + " (" + Long.toString(file[i].length()) + "B)");
-					if(i<n-1)
+					sb.append(file[i].getName() + " (" + formatFileSize(file[i].length()) + ")");
+					if(i!=n-1) //last file don't need "," at the end
 					{
 						sb.append(", ");						
 					}
 				}
 				
-				output = sb.toString();
-	        	t1.setText(output);
+	        	t1.setText(sb.toString());
+	        	t2.setEditable(true);
+	        }
+	        else if (returnVal == JFileChooser.CANCEL_OPTION)
+	        {
+	        	t1.setText(null);
 	        }
 	        
 	        Frame.pb.setValue(0);
+		}
+		
+		if(e.getActionCommand() == "Random")
+		{
+			t3.setEditable(true);
+			t3.setText(randomString(16));
+			
+			StringSelection stringSelection = new StringSelection(t3.getText());
+			Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+			clipboard.setContents(stringSelection, null);
+			l2.setText("copied to clipboard");
 		}
 		
 		if(e.getActionCommand() == "Create job")
@@ -270,10 +320,8 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 					
 					row[1] = null;
 					
-					if(getSplitType())
-						row[2] = "split by size";
-					else
-						row[2] = "split by part";
+					row[2] = "split by size";
+
 					
 					row[3] = getSplitVal();
 					
@@ -287,8 +335,10 @@ public class ChopPanel extends JPanel implements ItemListener, ActionListener
 					JobPanel.AddRow(row, file);
 								
 					t1.setText(null);
-					c1.setSelected(false);
-					grp2.clearSelection();
+					t2.setText(null);
+					t2.setEditable(false);
+					R3.setSelected(true);
+					l2.setText(null);
 				}
 			}		
 		}

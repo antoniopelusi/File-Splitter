@@ -61,12 +61,12 @@ public class StitchPanel extends JPanel implements ActionListener, ItemListener
 		c1.addItemListener(this);
 		
 		t2 = new JTextField();
-		t2.setBounds(140, 80, 125, 25);
+		t2.setBounds(105, 80, 135, 25);
 		t2.setHorizontalAlignment(JTextField.CENTER);
 		t2.setEditable(false);
 		
 		b2 = new JButton("Create job");
-		b2.setBounds(220, 220, 110, 25);
+		b2.setBounds(225, 220, 110, 25);
 		b2.addActionListener(this);
 		
 		add(b1);
@@ -121,6 +121,8 @@ public class StitchPanel extends JPanel implements ActionListener, ItemListener
 		{
 			fc = new JFileChooser();
 			fc.setMultiSelectionEnabled(true);
+			Action details = fc.getActionMap().get("viewTypeDetails");
+			details.actionPerformed(null);
 						
 			returnVal = fc.showOpenDialog(null);
 			
@@ -135,7 +137,7 @@ public class StitchPanel extends JPanel implements ActionListener, ItemListener
 				for(int i=0; i<n; i++)
 				{
 					sb.append(file2[i].getName());
-					if(i<n-1)
+					if(i!=n-1)
 					{
 						sb.append(", ");						
 					}
@@ -143,6 +145,10 @@ public class StitchPanel extends JPanel implements ActionListener, ItemListener
 				
 				output = sb.toString();
 	        	t1.setText(output);
+	        }
+	        else if (returnVal == JFileChooser.CANCEL_OPTION)
+	        {
+	        	t1.setText(null);
 	        }
 	        
 	        Frame.pb.setValue(0);

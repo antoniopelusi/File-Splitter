@@ -15,6 +15,7 @@ Need Java virtual machine to start, available [**here**](https://www.java.com/en
 - Split by size
 - Compress files using .zip format
 - Encrypt files using Advanced Encryption Standard (AES) 128 bit (***16-digit password to encrypt***)
+- Password generator included
 - Place multiple files in a queue before processing them
 
 **Temporary files are automatically deleted**

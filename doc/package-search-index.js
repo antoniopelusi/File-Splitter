@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"fs.gui"},{"l":"fs.logic"},{"l":"fs.main"}];updateSearchResults();

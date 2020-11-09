@@ -13,6 +13,10 @@ import javax.swing.border.*;
  */
 public class StitchPanel extends JPanel implements ActionListener, ItemListener
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton b1, b2;
 	private JTextField t1, t2;
 	private JCheckBox c1;

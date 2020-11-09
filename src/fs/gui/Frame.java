@@ -17,6 +17,8 @@ import fs.logic.Stitch;
  */
 public class Frame extends JFrame implements ActionListener
 {	
+	private static final long serialVersionUID = -7915256629979842614L;
+	
 	private JButton b1, b2, b3;
 	static JProgressBar pb;
 		
@@ -35,7 +37,7 @@ public class Frame extends JFrame implements ActionListener
 		super();
 		
 		setTitle("File Splitter");
-		setSize(700, 685);
+		super.setSize(715, 690);
 		setLocationRelativeTo(null);
 		setResizable(false);
 			

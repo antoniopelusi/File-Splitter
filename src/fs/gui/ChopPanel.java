@@ -19,6 +19,10 @@ import javax.swing.border.*;
  */
 public class ChopPanel extends JPanel implements ItemListener, ActionListener
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton b1, b2, b3;
 	private static JTextField t1, t2, t3;
 	private static JRadioButton R1, R2, R3;

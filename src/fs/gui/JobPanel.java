@@ -14,6 +14,10 @@ import java.util.*;
  */
 public class JobPanel extends JPanel //implements ActionListener
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Object header[] = {"Type", "File", "Split type", "Split val", "Compress", "Crypt"};
 	static DefaultTableModel tModel;
 	static JTable t;
@@ -43,7 +47,12 @@ public class JobPanel extends JPanel //implements ActionListener
 		
 		tModel = new DefaultTableModel()
 		  {
-		    public boolean isCellEditable(int row, int column)
+		    /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			public boolean isCellEditable(int row, int column)
 		    {
 		      return false;
 		    }

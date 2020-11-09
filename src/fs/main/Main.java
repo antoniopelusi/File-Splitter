@@ -6,13 +6,14 @@ import fs.gui.Frame;
 /**
  * Main function
  * @author antoniopelusi
- * @version 1.3
+ * @version 1.4
  *
  */
 public class Main
 {	
 	/**
 	 * Create a Frame object
+	 * @param args are the main arguments
 	 */
 	public static void main(String[] args)
 	{			

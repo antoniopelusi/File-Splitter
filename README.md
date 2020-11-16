@@ -31,4 +31,3 @@ The documentation for this project is available in the **/doc** folder
 Swing GUI
 
 ![](doc/ScreenshotLinux.png)
-![](doc/ScreenshotWindows.png)

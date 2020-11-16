@@ -2,9 +2,8 @@
 
 A simple tool to split, zip, and encrypt files
 
-***USE 16-DIGIT PASSWORD TO ENCRYPT***
-
 [![Download File Splitter](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)
+***USE 16-DIGIT PASSWORD TO ENCRYPT***
 
 ## `Specification`
 [![Download File Splitter](https://img.shields.io/sourceforge/dt/tool-file-splitter.svg)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download) [![Download File Splitter](https://img.shields.io/badge/Version-1.4-yellow)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download) [![Download File Splitter](https://img.shields.io/badge/Language-Java_8-orange)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download) [![Download File Splitter](https://img.shields.io/badge/Open_Source-GPL--3.0-informational)](https://sourceforge.net/projects/tool-file-splitter/files/latest/download)

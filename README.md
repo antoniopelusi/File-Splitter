@@ -8,7 +8,7 @@ Download the .jar bundle [**here**](https://github.com/antoniopelusi/File-Splitt
 
 ## `Specification`
 [![Download File Splitter](https://img.shields.io/badge/Version-1.0-white)]()
-[![Download File Splitter](https://img.shields.io/badge/Language-Java_8-yellow)]()
+[![Download File Splitter](https://img.shields.io/badge/Language-Java-yellow)]()
 [![Download File Splitter](https://img.shields.io/badge/Open_Source-GPL--3.0-informational)]()
 
 #### Written in Java 8 with Eclipse IDE, can be run on all the operating systems
